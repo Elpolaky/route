@@ -1,0 +1,425 @@
+/* ================ General confiq ==================== */
+:root {
+  --first-font-color: white;
+  --second-font-color: black;
+  --third-font-color: #4e4e4e;
+
+  --main-bg-color: #f5f5f5;
+  --theme-first-color: #0078ff;
+  --theme-second-color: #cde1f8;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+p {
+  color: var(--third-font-color);
+}
+@keyframes cursor {
+  to {
+    border-right: 2px solid #ff7f5000;
+  }
+}
+section {
+  background-color: var(--main-bg-color);
+}
+
+@keyframes words {
+  0%,
+  25% {
+    content: "Designer";
+  }
+  26%,
+  50% {
+    content: "Developer";
+  }
+  51%,
+  75% {
+    content: "Freelancer";
+  }
+  76%,
+  100% {
+    content: "Photoghrapher";
+  }
+}
+@keyframes typing {
+  0%,
+  3%,
+  17%,
+  25%,
+  26%,
+  29%,
+  43%,
+  50%,
+  51%,
+  54%,
+  68%,
+  75%,
+  76%,
+  79% {
+    color: var(--theme-second-color);
+    width: 0%;
+  }
+  7%,
+  13%,
+  33%,
+  39%,
+  59%,
+  65%,
+  83%,
+  89%,
+  93%,
+  98% {
+    color: var(--theme-first-color);
+    width: 100%;
+  }
+}
+/* ================ Navbar ==================== */
+
+.navbar {
+  --bs-navbar-color: var(--first-font-color);
+  --bs-navbar-hover-color: var(--first-font-color);
+  --bs-navbar-disabled-color: var(--first-font-color);
+  --bs-navbar-active-color: var(--first-font-color);
+  --bs-navbar-brand-color: var(--first-font-color);
+  --bs-navbar-brand-hover-color: var(--first-font-color);
+}
+.navbar a {
+  position: relative;
+  overflow: hidden;
+}
+.nav-item {
+  margin-right: 1rem;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  background-color: transparent;
+  width: 2%;
+  height: 80%;
+  border-bottom: solid white;
+  transition: all 0.3s ease-in-out;
+}
+.nav-pills {
+  --bs-nav-pills-link-active-color: #fff;
+  --bs-nav-pills-link-active-bg: transparent;
+}
+.nav-pills .nav-link.active {
+  &::before {
+    content: "";
+    position: absolute;
+    opacity: 1;
+    background-color: transparent;
+    width: 50%;
+    height: 80%;
+    border-bottom-left-radius: 20%;
+    border-bottom: solid white;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.nav-item:hover > .nav-link::before {
+  border-bottom-left-radius: 30%;
+  opacity: 1;
+  width: 50%;
+}
+/* ================ Header section ==================== */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.21)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--first-font-color);
+  font-weight: 700;
+  h2 {
+    font-size: 5rem;
+  }
+
+  .animated-text span {
+    position: relative;
+  }
+
+  .animated-text span::before {
+    font-size: 3rem;
+    overflow: hidden;
+    padding: 0.1rem;
+    content: "";
+    width: 0;
+    display: inline-block;
+    color: var(--theme-first-color);
+    border-right: 2px solid var(--theme-second-color);
+    animation: words 20s infinite, cursor 0.8s infinite,
+      typing 20s steps(13) infinite;
+  }
+}
+/* ================ about ==================== */
+#about {
+  background-color: var(--main-bg-color);
+  .header {
+    &::before {
+      width: 6rem;
+      background-color: var(--theme-first-color);
+      position: absolute;
+      left: 0%;
+      transform: translatex(0%);
+    }
+  }
+  figcaption {
+    h2 {
+      display: inline-block;
+      margin: 0;
+    }
+    p {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}
+.progress {
+  height: 0.6rem;
+  background-color: var(--theme-second-color);
+}
+
+/* ================ Services ==================== */
+#services {
+  background-color: var(--main-bg-color);
+  .card {
+    &:hover .icon {
+      border-color: var(--theme-second-color);
+      background-color: var(--theme-first-color);
+    }
+    &:hover i {
+      color: white;
+    }
+  }
+}
+
+.icon {
+  margin: auto;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border: solid 8px var(--theme-first-color);
+  border-radius: 100%;
+  transition: all 0.3s;
+  i {
+    transition: all 0.3s;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+  }
+}
+.header {
+  position: relative;
+  &::before {
+    content: "";
+    width: 3rem;
+    height: 0.2rem;
+    background-color: var(--theme-first-color);
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+/* ================ Rates ==================== */
+.counters {
+  background-image: linear-gradient(#4c9ef3, #4c9df376),
+    url(../images/counters-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  .card {
+    &:hover .icon {
+      background-color: var(--theme-second-color);
+      border-color: var(--theme-first-color);
+      color: var(--theme-first-color);
+    }
+    &:hover .icon i {
+      color: var(--theme-first-color);
+    }
+  }
+
+  .icon {
+    border-color: var(--theme-second-color);
+  }
+}
+/* ================ portfolio ==================== */
+#Portfolio {
+  .card {
+    figure {
+      overflow: hidden;
+    }
+    img,
+    a {
+      transition: all 0.5s;
+    
+    }
+    div a{
+      width: 2.2rem;
+      height: 2.2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    &:hover img {
+      transform: scale(1.3);
+    }
+    &:hover a {
+      border-color: var(--theme-second-color);
+      background-color: var(--theme-first-color);
+      transform: rotate(360deg);
+    }
+    &:hover p {
+      color: var(--theme-first-color);
+    }
+    &:hover i {
+      color: white;
+    }
+  }
+}
+
+/* ================ slider ==================== */
+.person-slider {
+  background-image: linear-gradient(#4c9ef3, #4c9df376),
+    url(../images/overlay-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.carousel-caption {
+  position: static;
+  h5 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: white;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+}
+/* ================ Blog ==================== */
+#blog {
+  .card {
+    .card-footer {
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    span {
+      width: auto;
+      margin: auto;
+      margin-top: -1rem;
+    }
+    a {
+      transition: all 0.3s;
+      &:hover {
+        color: var(--theme-first-color);
+      }
+    }
+  }
+}
+/* ================ Contact ==================== */
+
+#contact {
+  background-image: linear-gradient(#4c9ef3, #4c9df376),
+    url(../images/overlay-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  .header {
+    &::before {
+      width: 6rem;
+      background-color: var(--theme-first-color);
+      position: absolute;
+      left: 0%;
+      transform: translatex(0%);
+    }
+  }
+  form {
+    button {
+      transition: all 0.3s;
+      &:hover {
+        background-color: #0077ffa3;
+        border: solid 5px var(--theme-second-color);
+      }
+    }
+  }
+  .social-media {
+    a {
+      padding: 0.2rem;
+      border: solid 3px var(--theme-first-color);
+      border-radius: 100%;
+      text-align: center;
+      transition: all 0.3s;
+      i {
+        width: 25px;
+        height: 25px;
+        color: black;
+        transition: all 0.3s;
+      }
+      &:hover {
+        background-color: var(--theme-first-color);
+        border-color: var(--theme-second-color);
+      }
+      &:hover i {
+        color: white;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+/* ================ Fotter ==================== */
+footer {
+  background-color: #0062d3;
+  box-shadow: inset 0px 2px 15px 1px rgba(0, 0, 0, 0.258);
+}
+
+/* ================ Media ==================== */
+
+/* sm	640px	 */
+@media (min-width: 640px) {
+}
+/* md	768px	 */
+@media (min-width: 768px) {
+}
+/* lg	1024px	 */
+@media (min-width: 1024px) {
+  .dropdown {
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .dropdown-menu {
+    transform: translatey(50%);
+    opacity: 0;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+  }
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translatey(0%);
+  }
+  .dropdown:hover {
+    overflow: visible;
+  }
+}
+/* xl	1280px	 */
+@media (min-width: 1280px) {
+}
+/* xxl	1536px	 */
+@media (min-width: 1536px) {
+}
