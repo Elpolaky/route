@@ -392,13 +392,13 @@ footer {
 /* ================ Media ==================== */
 
 /* sm	640px	 */
-@media (min-width: 640px) {
+@media (min-width: 576px) {
 }
 /* md	768px	 */
 @media (min-width: 768px) {
 }
 /* lg	1024px	 */
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .dropdown {
     overflow: hidden;
     transition: all 1s;
@@ -418,8 +418,8 @@ footer {
   }
 }
 /* xl	1280px	 */
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
 }
 /* xxl	1536px	 */
-@media (min-width: 1536px) {
+@media (min-width: 1400px) {
 }
